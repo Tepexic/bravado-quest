@@ -72,8 +72,9 @@ export default {
             this.users.push({
               name: u.name,
               mail: u.name.split(' ')[0].toLowerCase() + '@sw.com',
-              description: `Is a ${u.species} born on ${u.homeworld}. Has ${u.hairColor ? u.hairColor : 'no'} hair, ${u.eyeColor} eyes and ${u.skinColor} skin`,
-              data: `Weights ${u.mass}kg and is ${u.height}m tall`,
+              description: `Is a ${u.species} born on ${u.homeworld ? u.homeworld : 'an unknown planet'}. 
+                Has ${u.hairColor ? u.hairColor : 'no'} hair, ${u.eyeColor} eyes and ${u.skinColor ? u.skinColor : 'unknown'} skin`,
+              data: `Weights ${u.mass ? u.mass : 'X'}kg and is ${u.height ? u.height : 'X'}m tall`,
               image: u.image
             })
           })
