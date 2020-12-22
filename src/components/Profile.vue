@@ -8,13 +8,16 @@
       class="hidden"
     />
     <div
-      class="bg-cover rounded h-36 md:h-40 md:w-48" 
+      class="bg-cover rounded h-40 md:h-48 w-full md:w-48" 
       :style="`background-image: url(${user.image})`"
     ></div>
     <div class="w-full flex flex-col">
       <div class="text-left md:ml-3">
         <div class="text-4xl">
           <div v-html="highlight(user.name)"></div>
+        </div>
+        <div class="md:absolute md:right-1 md:top-1 text-gray-500">
+          <div v-html="highlight(user.mail)"></div>
         </div>
         <div class="text-gray-600 font-bold">
           <div v-html="highlight(user.description)"></div>
@@ -25,9 +28,6 @@
         <div class="mt-2 py-4 px-6 h-full w-full flex items-center text-green-600 font-bold uppercase border-t-2">
           Mark as suitable
         </div>
-      </div>
-      <div class="absolute right-1 top-1 text-gray-500">
-        <div v-html="highlight(user.mail)"></div>
       </div>
     </div>
   </label>
