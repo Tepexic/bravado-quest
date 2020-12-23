@@ -8,10 +8,10 @@
       class="hidden"
     />
     <div
-      class="bg-cover rounded h-40 md:h-48 w-full md:w-48" 
+      class="bg-cover rounded h-60 md:h-48 w-full md:w-48" 
       :style="`background-image: url(${user.image})`"
     ></div>
-    <div class="w-full flex flex-col">
+    <div class="w-full flex flex-col p-2 md:p-0">
       <div class="text-left md:ml-3">
         <div class="text-4xl">
           <div v-html="highlight(user.name)"></div>
@@ -25,7 +25,7 @@
         <div class="text-gray-600">
           <div v-html="highlight(user.data)"></div>
         </div>
-        <div class="mt-2 py-4 px-6 h-full w-full flex items-center text-green-600 font-bold uppercase border-t-2">
+        <div class="mt-2 pt-4 md:px-6 h-full w-full flex items-center text-green-600 font-bold uppercase border-t-2">
           Mark as suitable
         </div>
       </div>
