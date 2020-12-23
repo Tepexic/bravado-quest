@@ -27,7 +27,7 @@
         <div class=" md:absolute md:right-1 md:top-1 text-gray-500 text-sm">
           <div v-html="highlight(user.mail)"></div>
         </div>
-        <div class="text-gray-600 font-bold md:ml-4">
+        <div class="text-gray-600 font-bold md:ml-4 pr-1">
           <div v-html="highlight(user.description)"></div>
         </div>
         <div class="text-gray-600 md:ml-4">
