@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="h-screen w-full bg-gray-200 flex justify-center items-align">
-    <div class="bg-white w-full lg:max-w-2xl py-10 px-8 mx-auto my-2 overflow-scroll">
+    <div class="bg-white w-full lg:max-w-2xl py-4 px-8 mx-auto overflow-scroll">
       
-     <div class="pt-2 relative mx-auto text-gray-600">
+     <div class="relative mx-auto text-gray-600">
         <input 
           id="search"
           class="w-full h-12 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-10 shadow-lg"
@@ -10,8 +10,8 @@
           placeholder="Search for Star Wars characters..."
           v-model="query"
         >
-        <button type="submit" class="absolute left-3 top-6">
-          <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+        <button type="submit" class="absolute left-3 top-4">
+          <svg class="text-gray-600 h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
             viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
             width="512px" height="512px">
@@ -21,9 +21,13 @@
         </button>
       </div>
 
-      <div class="p-2 overflow-hidden">
+      <div v-if="searchResults.length > 0" class="p-2 overflow-hidden">
         <profile v-for="u in searchResults" :key="u.name" :user="u" :query="query"/>
       </div>
+      <div v-else class="p-2">
+        No profile matches your search, please try again with a different keyword.
+      </div>
+
     </div>
   </div>
 </template>
@@ -39,6 +43,7 @@ export default {
     return {
       users: [],
       searchWord: '',
+      selected: [],
     }
   },
   computed: {
@@ -48,7 +53,7 @@ export default {
       },
       set: debounce( function (newValue) {
         this.searchWord = newValue.toLowerCase()
-      }, 500)
+      }, 300)
     },
     searchResults() {
       return this.users.filter( user => 
