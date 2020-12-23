@@ -1,28 +1,34 @@
 <template>
   <label
     tabindex="0"
-    class="rounded mb-6 overflow-hidden w-full flex flex-wrap md:flex-nowrap items-center justify-center cursor-pointer group shadow transition duration-300 ease-in-out hover:shadow-md transform hover:-translate-y-1 active:shadow-none focus:shadow-md focus:-translate-y-1"
+    class="rounded mb-6 overflow-hidden w-full
+      flex flex-wrap md:flex-nowrap items-center justify-center
+      cursor-pointer group border-b 
+      transition duration-300 ease-in-out 
+      hover:shadow-md transform hover:-translate-y-1
+      active:shadow-none
+      focus:shadow-md focus:-translate-y-1"
   >
     <input
       type="checkbox"
       class="hidden"
     />
     <div
-      class="bg-cover rounded h-60 md:h-48 w-full md:w-48" 
+      class="bg-cover rounded-l h-60 md:h-48 w-full md:w-48" 
       :style="`background-image: url(${user.image})`"
     ></div>
     <div class="w-full flex flex-col p-2 md:p-0">
-      <div class="text-left md:ml-3">
-        <div class="text-4xl">
+      <div class="text-left">
+        <div class="text-4xl md:ml-4">
           <div v-html="highlight(user.name)"></div>
         </div>
-        <div class="md:absolute md:right-1 md:top-1 text-gray-500">
+        <div class=" md:absolute md:right-1 md:top-1 text-gray-500">
           <div v-html="highlight(user.mail)"></div>
         </div>
-        <div class="text-gray-600 font-bold">
+        <div class="text-gray-600 font-bold md:ml-4">
           <div v-html="highlight(user.description)"></div>
         </div>
-        <div class="text-gray-600">
+        <div class="text-gray-600 md:ml-4">
           <div v-html="highlight(user.data)"></div>
         </div>
         <div class="mt-2 pt-4 md:px-6 h-full w-full flex items-center text-green-600 font-bold uppercase border-t-2">
@@ -60,4 +66,7 @@ export default {
 </script>
 
 <style scoped>
+label {
+  background: #FAFAFA;
+}
 </style>
