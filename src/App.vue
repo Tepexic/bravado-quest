@@ -5,7 +5,7 @@
      <div class="relative mx-auto text-gray-600">
         <input 
           id="search"
-          class="w-full h-12 rounded mb-8 focus:outline-none focus:shadow-outline text-xl px-10 shadow-lg"
+          class="w-full h-12 rounded mb-8 focus:outline-none focus:shadow-outline text-xl pl-12 pr-5 shadow-lg"
           type="search" 
           placeholder="Search for Star Wars characters..."
           v-model="query"
@@ -39,6 +39,9 @@ import Profile from '@/components/Profile';
 
 export default {
   name: 'App',
+  metaInfo: {
+    title: 'Profile search',
+  },
   data() {
     return {
       users: [],
@@ -109,4 +112,7 @@ export default {
   border-radius: 2px;
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
 </style>

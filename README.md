@@ -1,6 +1,6 @@
 # Bravado quest
 
-Implement a simple profile search application using Vue.
+Implement a simple profile search application using Vue. See it live [here]{https://bravado-quest.netlify.app/}.
 
 ## Layout design
 

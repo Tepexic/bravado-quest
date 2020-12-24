@@ -16,7 +16,7 @@
       @change="$emit('change', selected)"
     />
     <div
-      class="bg-cover rounded-l h-60 md:h-48 w-full md:w-48" 
+      class="bg-cover bg-center rounded-l h-48 md:h-48 w-full md:w-48" 
       :style="`background-image: url(${user.image})`"
     ></div>
     <div class="w-full flex flex-col p-2 md:p-0">
@@ -33,7 +33,9 @@
         <div class="text-gray-600 md:ml-4">
           <div v-html="highlight(user.data)"></div>
         </div>
-        <div class="mt-2 pt-4 md:px-6 h-full w-full flex items-center text-green-600 text-xs font-bold uppercase border-t-2">
+        <div 
+          class="mt-2 pt-4 pb-2 md:px-6 h-full w-full flex items-center text-green-600 text-xs font-bold uppercase"
+          :class="selected ? '' : 'border-t-2'">
           {{ selected ? 'skip selection' : 'Mark as suitable'}}
         </div>
       </div>
